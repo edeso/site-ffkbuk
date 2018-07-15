@@ -238,7 +238,7 @@ GLUON_TLWDR4900_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_P
 
 ## Firmware name pattern
 # we use git to tell us the most recent tag of our branch
-DEFAULT_GLUON_RELEASE := $(shell git describe --always --dirty=+ 2>/dev/null || echo unknown)-$(shell date '+%Y%m%d')$(if $(GLUON_BRANCH),-$(GLUON_BRANCH),)
+DEFAULT_GLUON_RELEASE := $(shell git describe --always --dirty=+ 2>/dev/null || echo unknown)$(if $(GLUON_BRANCH),($(GLUON_BRANCH)),)-$(shell date '+%Y%m%d')
 
 
 ##  GLUON_RELEASE
